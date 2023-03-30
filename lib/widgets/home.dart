@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Vidente'),
-        centerTitle: true,
       ),
       body: Center(
         child: Column(children: [

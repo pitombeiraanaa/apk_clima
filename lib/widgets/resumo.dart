@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:previsao_tempo/controllers/tema_controller.dart';
 
 class Resumo extends StatelessWidget {
   final String cidade;
@@ -27,12 +28,14 @@ class Resumo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Column(
+            Row(
               children: [
                 Icon(Icons.brightness_6_outlined),
                 Switch(
-                  value: false,
-                  onChanged: (valor) {},
+                  value: TemaController.instancia.usarTemaEscuro,
+                  onChanged: (valor) {
+                    TemaController.instancia.trocarTema();
+                  },
                 ),
               ],
             ),
